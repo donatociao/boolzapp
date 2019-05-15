@@ -5,55 +5,94 @@
     <title>Boolzap</title>
 
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   </head>
   <body>
     <section class="boolzap">
+
+      <!-- INIZIO COLONNA SX -->
       <div class="colonna-sx">
-        <div class="head-sx">
+
+        <!-- HEAD SX -->
+        <div class="head-and-search-container">
+          <div class="head-sx">
+            <i class="fas fa-3x fa-user-circle"></i>
+            <div class="items-sx-dx">
+              <a href="#"><i class="far fa-2x fa-circle"></i></a>
+              <a href="#"><i class="fas fa-2x fa-comment-alt"></i></a>
+              <a href="#"><i class="fas fa-2x fa-ellipsis-v"></i></a>
+            </div>
+          </div>
+
+          <!-- SEARCH BAR -->
+          <div class="search-sx">
+            <input type="text" placeholder="Cerca o inizia una nuova chat">
+          </div>
+        </div>
+        <!-- FINE HEAD SX -->
+
+        <div class="user-container">
+          <div class="chat-user">
+            <i class="fas fa-3x fa-user-circle"></i>
+            <h3>Donato</h3>
+          </div>
+          <div class="chat-user">
+            <i class="fas fa-3x fa-user-circle"></i>
+            <h3>Mario</h3>
+          </div>
+          <div class="chat-user">
+            <i class="fas fa-3x fa-user-circle"></i>
+            <h3>Luca</h3>
+          </div>
+          <div class="chat-user">
+            <i class="fas fa-3x fa-user-circle"></i>
+            <h3>Davide</h3>
+          </div>
+          <div class="chat-user">
+            <i class="fas fa-3x fa-user-circle"></i>
+            <h3>Marco</h3>
+          </div>
+          <div class="chat-user">
+            <i class="fas fa-3x fa-user-circle"></i>
+            <h3>Antonio</h3>
+          </div>
+          <div class="chat-user">
+            <i class="fas fa-3x fa-user-circle"></i>
+            <h3>Francesco</h3>
+          </div>
+          <div class="chat-user">
+            <i class="fas fa-3x fa-user-circle"></i>
+            <h3>Giuseppe</h3>
+          </div>
+        </div>
+      </div>
+      <!-- FINE COLONNA SX -->
+
+      <!-- COLONNA DX -->
+      <div class="colonna-dx">
+        <!-- HEAD DX -->
+        <div class="head-dx">
           <i class="fas fa-3x fa-user-circle"></i>
           <div class="items-sx-dx">
-            <a href="#"><i class="far fa-2x fa-circle"></i></a>
-            <a href="#"><i class="fas fa-2x fa-comment-alt"></i></a>
+            <a href="#"><i class="fas fa-2x fa-search"></i></a>
+            <a href="#"><i class="fas fa-2x fa-paperclip"></i></a>
             <a href="#"><i class="fas fa-2x fa-ellipsis-v"></i></a>
           </div>
         </div>
-        <div class="search-sx">
-          <input type="text" placeholder="  Cerca...">
-        </div>
-
-        <div class="chat">
-
-        </div>
-        <div class="chat">
-
-        </div>
-        <div class="chat">
-
-        </div>
-        <div class="chat">
-
-        </div>
-        <div class="chat">
-
-        </div>
-        <div class="chat">
-
-        </div>
-
-      </div>
-
-      <div class="colonna-dx">
-        <div class="head-dx">
-
-        </div>
+        <!-- CHAT BOX -->
         <div class="chat-box">
-
+          <div class="message-container template">
+            <div class="message utente">
+            </div>
+          </div>
         </div>
+
+        <!-- MESSAGE WRITER -->
         <div class="write-message">
-          <input type="text" placeholder="   Scrivi messaggio ....">
-          <a href="#"><i class="fas fa-2x fa-arrow-circle-right"></i></a>
+          <input class="scritto" type="text" placeholder="Scrivi messaggio ...">
+          <a class="invio" href="#"><i class="fas fa-2x fa-arrow-circle-right"></i></a>
         </div>
       </div>
     </section>

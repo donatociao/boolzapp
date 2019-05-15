@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .boolzap {
@@ -20,13 +21,19 @@
   flex-direction: column;
   overflow: scroll;
 }
+.head-and-search-container {
+  display: block;
+}
+
+.user-container {
+  overflow: scroll;
+}
 
 .head-sx,
 .head-dx {
-  height: 60px;
+  height: 70px;
   width: 100%;
   background-color: #eeeeee;
-  display: block;
 }
 
 .head-sx {
@@ -34,8 +41,9 @@
 }
 
 .head-sx i {
-  margin: 5px;
+  margin: 10px;
   color: grey;
+  padding-left: 10px;
 }
 
 .items-sx-dx {
@@ -45,22 +53,42 @@
 
 .search-sx {
   width: 100%;
-  height: 40px;
+  height: 60px;
   background-color: #f8f8f8;
   display: flex;
   justify-content: center;
 }
 
 .search-sx input {
-  border-radius: 10px;
+  border-radius: 15px;
   width: 95%;
   margin: 10px;
+  padding: 20px;
+  font-size: 16px;
 }
 
-.chat {
+.chat-user {
   width: auto;
   height: 80px;
   border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.chat-user:hover {
+  background-color: #e9ebeb;
+}
+
+.chat-user i {
+  float:left;
+  color: grey;
+}
+
+.chat-user h3 {
+  margin-left: 20px;
+  padding-bottom: 20px;
 }
 
 /* FINE COLONNA SINISTRA  */
@@ -74,12 +102,45 @@
   justify-content: flex-end;
 }
 
+.head-dx i {
+  margin: 10px;
+  color: grey;
+  padding-left: 10px;
+  float: left;
+}
+
 .chat-box {
   background-color: #ece5dd;
   background-size: cover;
   height: 545px;
   width: auto;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
+
+.template {
+  display: none;
+}
+
+.message {
+  background-color: white;
+  max-width: 300px;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  word-wrap: normal;
+  display: flex;
+  float: left;
+}
+
+.message.utente {
+  background-color: #dcf8c6;
+  display: flex;
+  float: right;
+}
+
 
 .write-message {
   background-color: #efefef;
@@ -99,7 +160,9 @@
   width: 90%;
   height: 40px;
   margin: 10px;
+  padding-left: 20px;
   float: left;
+  font-size: 16px;
 }
 
 .write-message a {
