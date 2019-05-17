@@ -6,6 +6,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+body {
+  overflow: hidden;
+}
+
 .boolzap {
   width: 100%;
   height: 100%;
@@ -38,6 +42,9 @@
 
 .head-sx {
   border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .head-sx i {
@@ -46,9 +53,20 @@
   padding-left: 10px;
 }
 
+.user-name {
+  float:left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
 .items-sx-dx {
   float: right;
   padding: 5px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 100px;
 }
 
 .search-sx {
@@ -59,7 +77,7 @@
   justify-content: center;
 }
 
-.search-sx input {
+.search-text {
   border-radius: 15px;
   width: 95%;
   margin: 10px;
@@ -109,6 +127,11 @@
   float: left;
 }
 
+
+.items-dx-dx {
+  float: right;
+}
+
 .chat-box {
   background-color: #ece5dd;
   background-size: cover;
@@ -124,20 +147,46 @@
 }
 
 .message {
+  padding: 20px;
+}
+
+.message-menu {
+  visibility: hidden;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  position: relative;
+  right: 10px;
+  color: grey;
+}
+
+.message-container:hover .message-menu {
+  visibility: visible;
+}
+
+.message-container {
   background-color: white;
-  max-width: 300px;
+  position: relative;
   margin: 20px;
-  padding: 10px;
-  border-radius: 10px;
+  border-radius: 15px;
   word-wrap: normal;
   display: flex;
   float: left;
 }
 
-.message.utente {
+.message-container.utente {
   background-color: #dcf8c6;
   display: flex;
   float: right;
+}
+
+.time {
+  font-size: 8px;
+  margin: 5px;
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .write-message {

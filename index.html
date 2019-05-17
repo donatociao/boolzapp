@@ -19,6 +19,7 @@
         <div class="head-and-search-container">
           <div class="head-sx">
             <i class="fas fa-3x fa-user-circle"></i>
+            <h2 class="user-name">Donato</h2>
             <div class="items-sx-dx">
               <a href="#"><i class="far fa-2x fa-circle"></i></a>
               <a href="#"><i class="fas fa-2x fa-comment-alt"></i></a>
@@ -28,7 +29,7 @@
 
           <!-- SEARCH BAR -->
           <div class="search-sx">
-            <input type="text" placeholder="Cerca o inizia una nuova chat">
+            <input class="search-text" type="text" placeholder="Cerca o inizia una nuova chat">
           </div>
         </div>
         <!-- FINE HEAD SX -->
@@ -75,7 +76,7 @@
         <!-- HEAD DX -->
         <div class="head-dx">
           <i class="fas fa-3x fa-user-circle"></i>
-          <div class="items-sx-dx">
+          <div class="items-dx-dx">
             <a href="#"><i class="fas fa-2x fa-search"></i></a>
             <a href="#"><i class="fas fa-2x fa-paperclip"></i></a>
             <a href="#"><i class="fas fa-2x fa-ellipsis-v"></i></a>
@@ -84,8 +85,12 @@
 
         <!-- CHAT BOX -->
         <div class="chat-box">
-          <div class="message-container template">
-            <div class="message utente">
+
+          <div class="message-row template">
+            <div class="message-container utente">
+              <span class="message"></span>
+              <i class="message-menu fas fa-chevron-down"></i>
+              <span class='time'></span>
             </div>
           </div>
         </div>
@@ -93,7 +98,7 @@
         <!-- MESSAGE WRITER -->
         <div class="write-message">
           <input class="scritto" type="text" placeholder="Scrivi messaggio ...">
-          <a class="invio" href="#"><i class="fas fa-2x fa-arrow-circle-right"></i></a>
+          <a class="invio" href="#"><i class="fas fa-2x fa-microphone"></i></a>
         </div>
       </div>
     </section>
