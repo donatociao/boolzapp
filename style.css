@@ -60,7 +60,6 @@ body {
   align-items: center;
 }
 
-
 .items-sx-dx {
   float: right;
   padding: 5px;
@@ -95,8 +94,14 @@ body {
   padding-left: 15px;
 }
 
+
+
 .chat-user:hover {
   background-color: #e9ebeb;
+}
+
+.chat-user.active {
+background-color: #e9ebeb;
 }
 
 .chat-user i {
@@ -127,7 +132,6 @@ body {
   float: left;
 }
 
-
 .items-dx-dx {
   float: right;
 }
@@ -142,6 +146,18 @@ body {
   flex-direction: column;
 }
 
+.message-row {
+  height: 100px;
+}
+
+.box {
+  display: none;
+}
+
+.box.active {
+  display: block;
+}
+
 .template {
   display: none;
 }
@@ -150,7 +166,7 @@ body {
   padding: 20px;
 }
 
-.message-menu {
+.message-menu-opener {
   visibility: hidden;
   display: flex;
   flex-direction: row;
@@ -160,8 +176,45 @@ body {
   color: grey;
 }
 
-.message-container:hover .message-menu {
+.message-menu-opener a {
+  color: grey;
+}
+
+.message-container:hover .message-menu-opener {
   visibility: visible;
+}
+
+.cpu .message-dropdown {
+  position: absolute;
+  left: 63px;
+  top: 35px;
+}
+
+.utente .message-dropdown {
+  position: absolute;
+  right: 15px;
+  top: 35px;
+}
+
+.message-dropdown {
+  background-color: white;
+  text-align: left;
+  width: 200px;
+  box-shadow: 1px 1px 5px -1px grey;
+  color: grey;
+  z-index: 1000;
+  display: none;
+}
+
+.item {
+  width: 200px;
+  padding: 20px;
+  width: auto;
+  height: auto;
+}
+
+.item:hover {
+  background-color: #eaeaea;
 }
 
 .message-container {

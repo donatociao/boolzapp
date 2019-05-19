@@ -5,11 +5,13 @@
 // e cliccando invia il testo viene aggiunto al thread sopra, come messaggio verde
 
 $('.invio').click(function() {
+  var data = $('.chat-box.active').attr('data-chat');
   var new_message = $('.message-row.template').clone();
   var type = $('.scritto').val();
   new_message.removeClass('template');
   new_message.children('.message-container').children('.message').html(type);
-  $('.chat-box').append(new_message);
+  new_message.children('.message-container').removeClass('cpu');
+  $('.chat-box[data-chat="'+ data +'"]').append(new_message);
   $('.scritto').val('');
   timing();
   $('.invio i').removeClass('fa-arrow-circle-right');
@@ -46,17 +48,17 @@ function timing() {
 // // - Risposta dall’interlocutore: ad ogni inserimento di un messaggio,
 // l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
 
-
 function risposta() {
   var cpu_message = $('.message-row.template').clone();
+  var data = $('.chat-box.active').attr('data-chat');
   cpu_message.removeClass('template');
   cpu_message.children('.message-container').children('.message').html('Ok!');
   cpu_message.children('.message-container').removeClass('utente');
-  $('.chat-box').append(cpu_message);
+  $('.chat-box[data-chat="'+ data +'"]').append(cpu_message);
 }
 
 $('.invio').click(function() {
-setTimeout(risposta, 3000);
+setTimeout(risposta, 1000);
 });
 
 // // - Ricerca utenti: scrivendo qualcosa nell’input a sinistra,
@@ -77,4 +79,25 @@ $('.search-text').keyup(function() {
   } else {
     $('.chat-user').show();
   }
+});
+
+// // Milestone 3
+// // - Click sul contatto mostra la conversazione del contatto cliccato,
+//  è possibile inserire nuovi messaggi per ogni conversazione
+
+//seleziono la conversazione
+$('.chat-user').click(function() {
+  var data = $(this).attr('data-chat');
+  $('.chat-user.active').removeClass('active');
+  $('.chat-user[data-chat="'+ data +'"]').addClass('active');
+  $('.chat-box.active').removeClass('active');
+  $('.chat-box[data-chat="'+ data +'"]').addClass('active');
+})
+
+
+
+// // - Cancella messaggio: cliccando sul messaggio appare un menu a tendina
+// che permette di cancellare il messaggio selezionato
+$('.opener').click(function() {
+ $('.message-dropdown').show();
 });

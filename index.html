@@ -35,35 +35,35 @@
         <!-- FINE HEAD SX -->
 
         <div class="user-container">
-          <div class="chat-user">
+          <div class="chat-user contatto active" data-chat="1">
             <i class="fas fa-3x fa-user-circle"></i>
             <h3>Donato</h3>
           </div>
-          <div class="chat-user">
+          <div class="chat-user contatto" data-chat="2">
             <i class="fas fa-3x fa-user-circle"></i>
             <h3>Mario</h3>
           </div>
-          <div class="chat-user">
+          <div class="chat-user contatto" data-chat="3">
             <i class="fas fa-3x fa-user-circle"></i>
             <h3>Luca</h3>
           </div>
-          <div class="chat-user">
+          <div class="chat-user contatto" data-chat="4">
             <i class="fas fa-3x fa-user-circle"></i>
             <h3>Davide</h3>
           </div>
-          <div class="chat-user">
+          <div class="chat-user contatto" data-chat="5">
             <i class="fas fa-3x fa-user-circle"></i>
             <h3>Marco</h3>
           </div>
-          <div class="chat-user">
+          <div class="chat-user contatto" data-chat="6">
             <i class="fas fa-3x fa-user-circle"></i>
             <h3>Antonio</h3>
           </div>
-          <div class="chat-user">
+          <div class="chat-user contatto" data-chat="7">
             <i class="fas fa-3x fa-user-circle"></i>
             <h3>Francesco</h3>
           </div>
-          <div class="chat-user">
+          <div class="chat-user contatto" data-chat="8">
             <i class="fas fa-3x fa-user-circle"></i>
             <h3>Giuseppe</h3>
           </div>
@@ -81,19 +81,45 @@
             <a href="#"><i class="fas fa-2x fa-paperclip"></i></a>
             <a href="#"><i class="fas fa-2x fa-ellipsis-v"></i></a>
           </div>
-        </div>
-
-        <!-- CHAT BOX -->
-        <div class="chat-box">
-
-          <div class="message-row template">
-            <div class="message-container utente">
-              <span class="message"></span>
-              <i class="message-menu fas fa-chevron-down"></i>
-              <span class='time'></span>
+        </div>   <!--CHIUSURA HEAD DX -->
+        <!-- TEMPLATE -->
+        <div class="message-row template">
+          <div class="message-container utente cpu">
+            <span class="message"></span>
+            <div class="message-menu-opener">
+              <a class="opener" href="#"><i class="fas fa-chevron-down"></i></a>
             </div>
-          </div>
+            <span class='time'></span>
+
+            <!-- Dropdown menu -->
+            <div class="message-dropdown">
+              <div class="item info">
+                <span>Message info</span>
+              </div>
+              <div class="item remove">
+                <span>Remove message</span>
+              </div>
+            </div> <!-- Chiusura dropdown -->
+          </div> <!-- Chiusura message container -->
+        </div> <!-- Chiusura template -->
+        <!-- CHAT BOX -->
+        <div class="chat-box box active" data-chat="1">
         </div>
+        <div class="chat-box box" data-chat="2">
+        </div>
+        <div class="chat-box box" data-chat="3">
+        </div>
+        <div class="chat-box box" data-chat="4">
+        </div>
+        <div class="chat-box box" data-chat="5">
+        </div>
+        <div class="chat-box box" data-chat="6">
+        </div>
+        <div class="chat-box box" data-chat="7">
+        </div>
+        <div class="chat-box box"data-chat="8">
+        </div>
+
 
         <!-- MESSAGE WRITER -->
         <div class="write-message">
