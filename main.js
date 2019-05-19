@@ -16,10 +16,15 @@ $('.invio').click(function() {
   $('.invio i').addClass('fa-microphone');
 });
 
-//vedi bene
+//cambia icona di invio quanto scrivo un messaggio
 $('.scritto').keyup(function() {
-  $('.invio i').removeClass('fa-microphone');
-  $('.invio i').addClass('fa-arrow-circle-right');
+  var type = $(this).val();
+  if(type.length != 0) {
+    $('.invio i').removeClass('fa-microphone');
+    $('.invio i').addClass('fa-arrow-circle-right');
+  } else {
+    $('.invio i').addClass('fa-microphone');
+  }
 });
 
 // Funzione time
@@ -59,17 +64,17 @@ setTimeout(risposta, 3000);
 // (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 
 $('.search-text').keyup(function() {
-  var ricerca = $('.search-text').val();
+  var ricerca = $(this).val();
   if (ricerca.length > 0) {
     $('.chat-user').hide();
     $('.chat-user h3').each(function() {
       if($(this).text().toLowerCase() == ricerca.toLowerCase()) {
+        $(this).parent('.chat-user').show();
+      } else if ($(this).text().toLowerCase().startsWith(ricerca.toLowerCase())){
         $(this).parent('.chat-user').show();
       }
     });
   } else {
     $('.chat-user').show();
   }
-
-
 });
