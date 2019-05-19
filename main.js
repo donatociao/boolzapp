@@ -3,13 +3,16 @@
 // e dall’interlocutore (bianco) assegnando due classi CSS diverse
 // Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa
 // e cliccando invia il testo viene aggiunto al thread sopra, come messaggio verde
+
 $(document).ready(function() {
+  //visualizzo il nome della chat attiva
   var nome = $('.chat-user.active').children('h3').text();
   $('#nome').text(nome);
+  //scrollo fino all'ultimo messaggio della chat attiva
   scroller();
 });
 
-
+//invio nuovo messaggio
 $('.invio').click(function() {
   var data = $('.chat-box.active').attr('data-chat');
   var new_message = $('.message-row.template').clone();
@@ -20,7 +23,9 @@ $('.invio').click(function() {
   $('.chat-box[data-chat="'+ data +'"]').append(new_message);
   scroller();
   $('.scritto').val('');
+  //inserisco ora di invio
   timing();
+  //cambio icona di invio e visualizzo il microfono
   $('.invio i').removeClass('fa-arrow-circle-right');
   $('.invio i').addClass('fa-microphone');
 });
@@ -36,7 +41,7 @@ $('.scritto').keyup(function() {
   }
 });
 
-// Funzione time
+// Funzione time per catturare l'ora di invio
 function timing() {
   var hours = new Date().getHours();
   var minutes = new Date().getMinutes();
@@ -55,6 +60,7 @@ function timing() {
 // // - Risposta dall’interlocutore: ad ogni inserimento di un messaggio,
 // l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
 
+//risposta automatican cpu dopo 1 secondo
 function risposta() {
   var cpu_message = $('.message-row.template').clone();
   var data = $('.chat-box.active').attr('data-chat');
@@ -70,18 +76,17 @@ $('.invio').click(function() {
 setTimeout(risposta, 1000);
 });
 
-
-//funzion scrollo quando invio
+//funzione scrollo quando invio
 function scroller() {
   var scroll = $('.chat-box.active')[0].scrollHeight;
   $('.chat-box.active').scrollTop(scroll);
 }
 
-
 // // - Ricerca utenti: scrivendo qualcosa nell’input a sinistra,
 // vengono visualizzati solo i contatti il cui nome contiene le lettere inserite
 // (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 
+//ricerca il contatto nella lista
 $('.search-text').keyup(function() {
   var ricerca = $(this).val();
   if (ricerca.length > 0) {
@@ -102,6 +107,7 @@ $('.search-text').keyup(function() {
 // // - Click sul contatto mostra la conversazione del contatto cliccato,
 //  è possibile inserire nuovi messaggi per ogni conversazione
 
+//seleziono un contatto e visualizzo chat
 $('.chat-user').click(function() {
   scroller();
   var data = $(this).attr('data-chat');
@@ -115,12 +121,10 @@ $('.chat-user').click(function() {
 
 // // - Cancella messaggio: cliccando sul messaggio appare un menu a tendina
 // che permette di cancellare il messaggio selezionato
-
 //apro dropdown
 $(document).on('click','.message-menu-opener', function() {
   $(this).siblings('.message-dropdown').toggleClass('active');
 });
-
 
 //rimuovo messaggio
 $(document).on('click','.remove', function() {
