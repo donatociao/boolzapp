@@ -6,6 +6,7 @@
 $(document).ready(function() {
   var nome = $('.chat-user.active').children('h3').text();
   $('#nome').text(nome);
+  scroller();
 });
 
 
@@ -17,6 +18,7 @@ $('.invio').click(function() {
   new_message.children('.message-container').children('.message').html(type);
   new_message.children('.message-container').removeClass('cpu');
   $('.chat-box[data-chat="'+ data +'"]').append(new_message);
+  scroller();
   $('.scritto').val('');
   timing();
   $('.invio i').removeClass('fa-arrow-circle-right');
@@ -60,11 +62,21 @@ function risposta() {
   cpu_message.children('.message-container').children('.message').html('Ok!');
   cpu_message.children('.message-container').removeClass('utente');
   $('.chat-box[data-chat="'+ data +'"]').append(cpu_message);
-}
+  scroller();
+};
 
+//imposto risposta dopo 1 secondo
 $('.invio').click(function() {
 setTimeout(risposta, 1000);
 });
+
+
+//funzion scrollo quando invio
+function scroller() {
+  var scroll = $('.chat-box.active')[0].scrollHeight;
+  $('.chat-box.active').scrollTop(scroll);
+}
+
 
 // // - Ricerca utenti: scrivendo qualcosa nell’input a sinistra,
 // vengono visualizzati solo i contatti il cui nome contiene le lettere inserite
@@ -91,6 +103,7 @@ $('.search-text').keyup(function() {
 //  è possibile inserire nuovi messaggi per ogni conversazione
 
 $('.chat-user').click(function() {
+  scroller();
   var data = $(this).attr('data-chat');
   var nome = $(this).children('h3').text();
   $('.chat-user.active').removeClass('active');
@@ -98,16 +111,18 @@ $('.chat-user').click(function() {
   $('#nome').text(nome);
   $('.chat-box.active').removeClass('active');
   $('.chat-box[data-chat="'+ data +'"]').addClass('active');
-})
-
-
-
-
+});
 
 // // - Cancella messaggio: cliccando sul messaggio appare un menu a tendina
 // che permette di cancellare il messaggio selezionato
 
-//vedi bene
-$('.opener').click(function() {
- $('.message-dropdown').show();
+//apro dropdown
+$(document).on('click','.message-menu-opener', function() {
+  $(this).siblings('.message-dropdown').toggleClass('active');
+});
+
+
+//rimuovo messaggio
+$(document).on('click','.remove', function() {
+$(this).closest('.message-row').hide();
 });
