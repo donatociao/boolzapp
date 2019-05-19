@@ -125,6 +125,12 @@ background-color: #e9ebeb;
   justify-content: flex-end;
 }
 
+.head-dx {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .head-dx i {
   margin: 10px;
   color: grey;
@@ -132,8 +138,18 @@ background-color: #e9ebeb;
   float: left;
 }
 
+#nome {
+  font-size: 22px;
+  font-weight: bold;
+  position: absolute;
+  top: 12px;
+}
+margin-top: 10px;
+}
+
 .items-dx-dx {
-  float: right;
+  margin-right: 20px;
+  margin-top: 10px;
 }
 
 .chat-box {

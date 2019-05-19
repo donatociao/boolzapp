@@ -3,6 +3,11 @@
 // e dall’interlocutore (bianco) assegnando due classi CSS diverse
 // Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa
 // e cliccando invia il testo viene aggiunto al thread sopra, come messaggio verde
+$(document).ready(function() {
+  var nome = $('.chat-user.active').children('h3').text();
+  $('#nome').text(nome);
+});
+
 
 $('.invio').click(function() {
   var data = $('.chat-box.active').attr('data-chat');
@@ -85,19 +90,24 @@ $('.search-text').keyup(function() {
 // // - Click sul contatto mostra la conversazione del contatto cliccato,
 //  è possibile inserire nuovi messaggi per ogni conversazione
 
-//seleziono la conversazione
 $('.chat-user').click(function() {
   var data = $(this).attr('data-chat');
+  var nome = $(this).children('h3').text();
   $('.chat-user.active').removeClass('active');
   $('.chat-user[data-chat="'+ data +'"]').addClass('active');
+  $('#nome').text(nome);
   $('.chat-box.active').removeClass('active');
   $('.chat-box[data-chat="'+ data +'"]').addClass('active');
 })
 
 
 
+
+
 // // - Cancella messaggio: cliccando sul messaggio appare un menu a tendina
 // che permette di cancellare il messaggio selezionato
+
+//vedi bene
 $('.opener').click(function() {
  $('.message-dropdown').show();
 });
