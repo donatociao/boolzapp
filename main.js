@@ -123,7 +123,7 @@ $('.chat-user').click(function() {
 // che permette di cancellare il messaggio selezionato
 //apro dropdown
 $(document).on('click','.message-menu-opener', function() {
-  $(this).siblings('.message-dropdown').toggleClass('active');
+  $(this).siblings('.message-dropdown').slideToggle().toggleClass('active');
 });
 
 //rimuovo messaggio
